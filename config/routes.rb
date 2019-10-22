@@ -1,47 +1,19 @@
 Rails.application.routes.draw do
-  get 'filters/index'
-  get 'filters/show'
-  get 'filters/new'
-  get 'filters/create'
-  get 'filters/edit'
-  get 'filters/update'
-  get 'filters/destroy'
-  get 'order_items/index'
-  get 'order_items/show'
-  get 'order_items/new'
-  get 'order_items/create'
-  get 'order_items/edit'
-  get 'order_items/update'
-  get 'order_items/destroy'
-  get 'orders/index'
-  get 'orders/show'
-  get 'orders/new'
-  get 'orders/create'
-  get 'orders/edit'
-  get 'orders/update'
-  get 'orders/destroy'
-  get 'sub_categories/index'
-  get 'sub_categories/show'
-  get 'sub_categories/new'
-  get 'sub_categories/create'
-  get 'sub_categories/edit'
-  get 'sub_categories/update'
-  get 'sub_categories/destroy'
-  get 'products/index'
-  get 'products/show'
-  get 'products/new'
-  get 'products/create'
-  get 'products/edit'
-  get 'products/update'
-  get 'products/destroy'
-  get 'categories/index'
-  get 'categories/show'
-  get 'categories/new'
-  get 'categories/create'
-  get 'categories/edit'
-  get 'categories/update'
-  get 'categories/destroy'
-  devise_for :users
+  devise_for :users#, controllers: { registrations: 'registrations' }
   root to: 'pages#home'
+  resources :categories do
+    resources :sub_categories, only: [:index, :show, :new, :create] do
+      resources :filters, only: [:index, :show, :new, :create]
+    end
+    resources :products, only: [:index, :show, :new, :create]
+  end
+  resources :orders do
+    resources :order_items, only: [:index, :show, :new, :create]
+  end
+  resources :sub_categories, only: [:edit, :update, :destroy]
+  resources :products, only: [:edit, :update, :destroy]
+  resources :filters, only: [:destroy]
+  resources :order_items, only: [:destroy]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
