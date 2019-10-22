@@ -1,5 +1,12 @@
 <%= render 'shared/navbar' %>
-
-
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="show-page">
+  <div class="filters">
+    <h6>Available Filters:</h6>
+    <% @sub_categories.each do |subcat| %>
+      <%= subcat.name %>
+    <% end %>
+  </div>
+  <div class="results">
+    <h6>X number of items found:</h6>
+  </div>
+</div>
