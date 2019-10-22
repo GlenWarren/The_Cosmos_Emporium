@@ -1,1 +1,26 @@
-// Specific CSS for your home-page
+.mybanner {
+  text-align: center;
+  padding: 80px;
+  height: 40vh;
+  color: white;
+  // color: #E2B93A;
+}
+
+.featured {
+  background: #1F282E;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+  height: 40vh;
+}
+
+.featured-products {
+  border: solid 1px white;
+  border-radius: 4px;
+}
+
+.featured-subcats {
+  border: solid 1px white;
+  border-radius: 4px;
+}
