@@ -1,0 +1,13 @@
+<nav class="mynavbar">
+  <div class="navbar-top">
+    <h3 class="pl-4"><%= link_to "The Cosmos Emporium 🚀", root_path %></h3>
+    <h6>Basket / Sign-In</h6>
+  </div>
+  <div class="categories">
+    <% Category.all.each do |cat| %>
+      <div class="tab">
+        <h4><%= link_to cat.name, category_path(cat) %></h4>
+      </div>
+    <% end %>
+  </div>
+</nav>
