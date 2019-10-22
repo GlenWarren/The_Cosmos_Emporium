@@ -6,7 +6,13 @@
   <div class="categories">
     <% Category.all.each do |cat| %>
       <div class="tab">
-        <h4><%= link_to cat.name, category_path(cat) %></h4>
+        <h4>
+        <% if cat == @category %>
+          <%= link_to cat.name, category_path(cat), class: "active" %>
+        <% else %>
+          <%= link_to cat.name, category_path(cat)%>
+        <% end %>
+        </h4>
       </div>
     <% end %>
   </div>
