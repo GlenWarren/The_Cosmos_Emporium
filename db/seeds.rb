@@ -114,7 +114,7 @@ descriptions = [
   "Eat the fat cats food sleep in the bathroom sink, so destroy the blinds howl on top of tall thing. Rub whiskers on bare skin act innocent attack the child but play time. Push your water glass on the floor please stop looking at your phone and pet me show belly or if it fits i sits but fight own tail swat at dog. Annoy the old grumpy cat, start a fight and then retreat to wash when i lose small kitty warm kitty little balls of fur sniff all the things."
   ]
 
-planet_images = %w(planet_1.png planet_2.jpeg planet_3.jpg planet_4.jpg planet_5.jpg planet_6.jpg planet_1.png planet_2.jpeg planet_3.jpg planet_4.jpg planet_5.jpg)
+planet_images = %w(planet_1.png planet_2.jpeg planet_3.jpg planet_4.jpg planet_5.jpg planet_6.jpg planet_7.jpg planet_1.png planet_2.jpeg planet_3.jpg planet_4.jpg)
 
 date = %w(23/11/2024 12/01/2021 06/08/2023 30/04/2045)
 
