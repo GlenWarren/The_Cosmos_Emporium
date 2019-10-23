@@ -6,6 +6,9 @@
   // color: #E2B93A;
   background-size: cover;
   background-position: bottom;
+  h3 {
+    color: #E2B93A;
+  }
 }
 
 .featured {
@@ -15,19 +18,65 @@
   display: flex;
   justify-content: space-around;
   padding: 12px;
-  height: 40vh;
+  // height: 40vh;
 }
 
-.featured-products {
+.featureds {
   background: #1F282E;
   border: solid 1px gray;
   border-radius: 4px;
-  width: 42vw;
+  width: 40vw;
+  padding: 8px 28px 20px 28px;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: white;
+    // color: #E2B93A;
+  }
 }
 
-.featured-subcats {
-  background: #1F282E;
-  border: solid 1px gray;
+.cards {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+  background-color: transparent;
+  h6 {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.homepage-card {
   border-radius: 4px;
-  width: 42vw;
+  border: none;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 28px;
+  img {
+    border-radius: 4px;
+    object-fit: cover;
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.popular {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  border: none;
+  height: 80px;
+  margin-bottom: 12px;
+  text-align: left;
+  img {
+    border-radius: 4px;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+  }
+  .popular-text {
+    flex-grow: 1;
+    padding: 12px;
+  }
 }

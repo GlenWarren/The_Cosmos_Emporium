@@ -5,10 +5,36 @@
   <h6>Browse and purchase prime interstellar real estate here, at the click of the button</h6>
 </div>
 <div class="featured">
-  <div class="featured-products">
+  <div class="featureds">
     <h5 class="p-2">Featured Products:</h5>
+    <div class="cards">
+      <% Product.where(homepage: true).each do |prod| %>
+      <div class="homepage-card">
+        <%= link_to category_product_path(prod.category, prod) do %>
+          <%= image_tag(prod.image) %>
+        <% end %>
+        <h6 class="pt-2"><%= link_to prod.name, category_product_path(prod.category, prod) %></h6>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <div class="featured-subcats">
-    <h5 class="p-2">Featured Categories:</h5>
+  <div class="featureds">
+    <h5 class="p-2">Popular Categories:</h5>
+    <div class="pl-3">
+      <% SubCategory.where(homepage: true).each do |subcat| %>
+      <%#= link_to subcat.name, category_path(subcat.category) %>
+        <div class="popular">
+          <% unless subcat.products.count.nil? %>
+            <%= link_to category_path(subcat.category) do %>
+              <%= image_tag(subcat.products.sample.image) %>
+            <% end %>
+            <div class="popular-text">
+              <h5><%= link_to "#{subcat.category.name} - #{subcat.name}s", category_path(subcat.category) %></h5>
+              <h6>Listings: <%= subcat.products.count %></h6>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
