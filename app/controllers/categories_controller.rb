@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @sub_categories = SubCategory.where(category: @category)
+    @products = Product.where(category: @category)
   end
 
   def new

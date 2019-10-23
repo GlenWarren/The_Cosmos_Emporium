@@ -9,5 +9,13 @@
   </div>
   <div class="results">
     <h6>X number of items found:</h6>
+    <% @products.each do |prod| %>
+    <div class="card">
+      <%= link_to product_path(prod) do %>
+        <%= image_tag(prod.image) %>
+      <% end %>
+      <%= link_to prod.name, product_path(prod) %>
+    </div>
+    <% end %>
   </div>
 </div>

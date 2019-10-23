@@ -13,4 +13,7 @@
 .results {
   padding: 16px;
   flex-grow: 1;
+  a {
+    text-decoration: none;
+  }
 }
