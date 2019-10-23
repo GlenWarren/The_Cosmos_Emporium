@@ -6,6 +6,9 @@
   // color: #E2B93A;
   background-size: cover;
   background-position: bottom;
+  h3 {
+    color: #E2B93A;
+  }
 }
 
 .featured {
@@ -25,6 +28,11 @@
   width: 40vw;
   padding: 8px 28px 20px 28px;
   text-align: center;
+  a {
+    text-decoration: none;
+    color: white;
+    // color: #E2B93A;
+  }
 }
 
 .cards {
@@ -40,7 +48,6 @@
 }
 
 .homepage-card {
-  background-color: transparent;
   border-radius: 4px;
   border: none;
   width: 140px;
@@ -51,5 +58,25 @@
     object-fit: cover;
     width: 140px;
     height: 140px;
+  }
+}
+
+.popular {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  border: none;
+  height: 80px;
+  margin-bottom: 12px;
+  text-align: left;
+  img {
+    border-radius: 4px;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+  }
+  .popular-text {
+    flex-grow: 1;
+    padding: 12px;
   }
 }

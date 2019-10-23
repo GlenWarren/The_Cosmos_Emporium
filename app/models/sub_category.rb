@@ -1,6 +1,7 @@
 class SubCategory < ApplicationRecord
   belongs_to :category
   has_many :filters, dependent: :destroy
+  has_many :products, through: :filters
   validates :name, presence: true
   before_save :default_active
   before_save :default_homepage
