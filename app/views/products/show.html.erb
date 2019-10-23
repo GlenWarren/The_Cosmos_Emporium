@@ -1,2 +1,18 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<%= render 'shared/navbar' %>
+<div class="product-show-page">
+  <div class="product-details">
+    <h2><%= @product.name %></h2>
+    <h6><%= @product.description %></h6>
+    <h6 class="border-top border-bottom p-2"><% @product.sub_categories.each do |subcat| %>
+      <%= subcat.name %>
+      <br>
+      <% end %>
+    </h6>
+    <div class="product-stats">
+      <h5>Available: <%= @product.availability %></h5>
+      <h5>£<%= @product.price %></h5>
+    </div>
+  </div>
+  <div class="product-image" style="background-image: url(<%= image_path @product.image %>)">
+  </div>
+</div>
