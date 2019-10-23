@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts 'Cleaning database of all filters...'
 Filter.destroy_all
 puts 'Cleaning database of all order_items...'
@@ -114,15 +106,23 @@ end
 
 puts 'Initiating products seed...'
 
+descriptions = [
+  "Strike colors run a shot across the bow black jack pinnace Spanish Main aft Plate Fleet lateen sail. Swab measured fer yer chains poop deck provost fathom list execution dock run a rig. Heave to boatswain Yellow Jack rope's end yard coxswain gally scourge of the seven seas.",
+  "Tender loot Pieces of Eight fore aft parley Pirate Round pink hogshead. Me crow's nest lad lugsail spirits galleon Spanish Main shrouds boatswain. Scuttle cog smartly fathom Jack Tar rigging ye coxswain topsail. Run a rig dead men tell no tales swing the lead lanyard sloop cackle fruit pirate schooner keel. Warp keel swab bilge water gibbet run a shot across the bow belay mutiny careen. Davy Jones' Locker dance the hempen jig deadlights American Main scourge of the seven seas Chain Shot interloper dead men tell no tales belaying pin. Code of conduct shrouds quarter deadlights bucko squiffy poop deck Nelsons folly Letter of Marque.",
+  "Realm of the galaxies circumnavigated globular star cluster hydrogen atoms Orion's sword something incredible is waiting to be known. Rich in heavy atoms Euclid gathered by gravity tingling of the spine venture as a patch of light. The only home we've ever known bits of moving fluff vanquish the impossible as a patch of light dispassionate extraterrestrial observer dream of the mind's eye. A still more glorious dawn awaits invent the universe bits of moving fluff the carbon in our apple pies from which we spring courage of our questions and billions upon billions upon billions upon billions upon billions upon billions upon billions.",
+  "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus.",
+  "Eat the fat cats food sleep in the bathroom sink, so destroy the blinds howl on top of tall thing. Rub whiskers on bare skin act innocent attack the child but play time. Push your water glass on the floor please stop looking at your phone and pet me show belly or if it fits i sits but fight own tail swat at dog. Annoy the old grumpy cat, start a fight and then retreat to wash when i lose small kitty warm kitty little balls of fur sniff all the things."
+  ]
+
 planet_images = %w(planet_1.png planet_2.jpeg planet_3.jpg planet_4.jpg planet_5.jpg planet_6.jpg planet_1.png planet_2.jpeg planet_3.jpg planet_4.jpg planet_5.jpg)
 
-date = %w(23/11/2024 12/01/21 06/08/2023 30/04/2045)
+date = %w(23/11/2024 12/01/2021 06/08/2023 30/04/2045)
 
 %w(Clive GDW506 Polly Juan Planet8576001917 Strawberry-fields Enrique Sanchez Bobo Plastic Goldie).each do |n|
   Product.create(
     category: Category.find_by(name: "Planets"),
     name: n,
-    description: "Strike colors run a shot across the bow black jack pinnace Spanish Main aft Plate Fleet lateen sail. Swab measured fer yer chains poop deck provost fathom list execution dock run a rig. Heave to boatswain Yellow Jack rope's end yard coxswain gally scourge of the seven seas.",
+    description: descriptions.sample,
     image: planet_images.pop,
     price: rand(245..98458),
     availability: date.sample
@@ -135,7 +135,7 @@ star_images = %w(star_1.jpeg star_2.jpg star_3.jpg star_4.jpeg star_5.jpg star_6
   Product.create(
     category: Category.find_by(name: "Stars"),
     name: n,
-    description: "Tender loot Pieces of Eight fore aft parley Pirate Round pink hogshead. Me crow's nest lad lugsail spirits galleon Spanish Main shrouds boatswain. Scuttle cog smartly fathom Jack Tar rigging ye coxswain topsail. Run a rig dead men tell no tales swing the lead lanyard sloop cackle fruit pirate schooner keel. Warp keel swab bilge water gibbet run a shot across the bow belay mutiny careen. Davy Jones' Locker dance the hempen jig deadlights American Main scourge of the seven seas Chain Shot interloper dead men tell no tales belaying pin. Code of conduct shrouds quarter deadlights bucko squiffy poop deck Nelsons folly Letter of Marque.",
+    description: descriptions.sample,
     image: star_images.pop,
     price: rand(2450..98408858),
     availability: date.sample
@@ -148,7 +148,7 @@ moon_images = %w(moon_1.jpeg moon_2.jpeg moon_3.jpeg moon_1.jpeg moon_2.jpeg moo
   Product.create(
     category: Category.find_by(name: "Moons"),
     name: n,
-    description: "Realm of the galaxies circumnavigated globular star cluster hydrogen atoms Orion's sword something incredible is waiting to be known. Rich in heavy atoms Euclid gathered by gravity tingling of the spine venture as a patch of light. The only home we've ever known bits of moving fluff vanquish the impossible as a patch of light dispassionate extraterrestrial observer dream of the mind's eye. A still more glorious dawn awaits invent the universe bits of moving fluff the carbon in our apple pies from which we spring courage of our questions and billions upon billions upon billions upon billions upon billions upon billions upon billions.",
+    description: descriptions.sample,
     image: moon_images.pop,
     price: rand(50..9846),
     availability: date.sample
@@ -161,7 +161,7 @@ black_images = %w(black_1.jpeg black_2.jpg black_3.jpg black_4.jpg black_5.jpg b
   Product.create(
     category: Category.find_by(name: "Black Holes"),
     name: n,
-    description: "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus.",
+    description: descriptions.sample,
     image: black_images.pop,
     price: rand(2453450..98408858),
     availability: date.sample
@@ -174,7 +174,7 @@ debris_images = %w(debris_1.jpg debris_2.jpg debris_3.jpg debris_4.jpeg debris_5
   Product.create(
     category: Category.find_by(name: "Debris"),
     name: n,
-    description: "Eat the fat cats food sleep in the bathroom sink, so destroy the blinds howl on top of tall thing. Rub whiskers on bare skin act innocent attack the child but play time. Push your water glass on the floor please stop looking at your phone and pet me show belly or if it fits i sits but fight own tail swat at dog. Annoy the old grumpy cat, start a fight and then retreat to wash when i lose small kitty warm kitty little balls of fur sniff all the things.",
+    description: descriptions.sample,
     image: debris_images.pop,
     price: rand(50..9854),
     availability: date.sample
@@ -186,50 +186,50 @@ puts 'Initiating filters seed...'
 Product.where(category: Category.find_by(name: "Planets")).each do |prod|
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Life-supporting Not-life-supporting H2O-present).sample),
+    sub_category: SubCategory.find_by(name: %w(Life-supporting Not-life-supporting H2O-present).sample)
   )
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Dwarf Terrestrial Gas Ice Giant).sample),
+    sub_category: SubCategory.find_by(name: %w(Dwarf Terrestrial Gas Ice Giant).sample)
   )
 end
 
 Product.where(category: Category.find_by(name: "Stars")).each do |prod|
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Sun Non-sun).sample),
+    sub_category: SubCategory.find_by(name: %w(Sun Non-sun).sample)
   )
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(T-Tauri Main-sequence Red-giant White-dwarf Red-dwarf Neutron Supergiant).sample),
+    sub_category: SubCategory.find_by(name: %w(T-Tauri Main-sequence Red-giant White-dwarf Red-dwarf Neutron Supergiant).sample)
   )
 end
 
 Product.where(category: Category.find_by(name: "Moons")).each do |prod|
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Cheddar Camembert Red-leicester Wensleydale).sample),
+    sub_category: SubCategory.find_by(name: %w(Cheddar Camembert Red-leicester Wensleydale).sample)
   )
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Mozzarella Gorgonzola Feta Melted).sample),
+    sub_category: SubCategory.find_by(name: %w(Mozzarella Gorgonzola Feta Melted).sample)
   )
 end
 
 Product.where(category: Category.find_by(name: "Black Holes")).each do |prod|
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Stellar Supermassive Intermediate).sample),
+    sub_category: SubCategory.find_by(name: %w(Stellar Supermassive Intermediate).sample)
   )
 end
 
 Product.where(category: Category.find_by(name: "Debris")).each do |prod|
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Weaponised Explosive).sample),
+    sub_category: SubCategory.find_by(name: %w(Weaponised Explosive).sample)
   )
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Asteroid Comet Meteor).sample),
+    sub_category: SubCategory.find_by(name: %w(Asteroid Comet Meteoroid).sample)
   )
 end
