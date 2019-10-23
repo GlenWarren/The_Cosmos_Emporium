@@ -9,7 +9,8 @@
 }
 
 .featured {
-  background: #1F282E;
+  // background: #1F282E;
+  // background: #E2B93A;
   color: white;
   display: flex;
   justify-content: space-around;
@@ -18,12 +19,14 @@
 }
 
 .featured-products {
+  background: #1F282E;
   border: solid 1px gray;
   border-radius: 4px;
   width: 42vw;
 }
 
 .featured-subcats {
+  background: #1F282E;
   border: solid 1px gray;
   border-radius: 4px;
   width: 42vw;

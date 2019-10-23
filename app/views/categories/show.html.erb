@@ -1,27 +1,27 @@
 <%= render 'shared/navbar' %>
 <div class="show-page">
-  <div class="filters">
-    <h6>Available Filters:</h6>
+  <div class="filters border-right">
+    <h5>Available filters:</h5>
     <% @sub_categories.each do |subcat| %>
       <%= subcat.name %>
       <br>
     <% end %>
   </div>
   <div class="results">
-    <h6><%= @products.count %> results:</h6>
+    <h5><%= @products.count %> results:</h5>
     <% @products.each do |prod| %>
     <div class="mycard">
       <div class="card-image">
-        <%= link_to product_path(prod) do %>
+        <%= link_to category_product_path(@category, prod) do %>
           <%= image_tag(prod.image) %>
         <% end %>
       </div>
       <div class="card-details">
-        <h3><%= link_to prod.name, product_path(prod) %></h3>
+        <h3><%= link_to prod.name, category_product_path(@category, prod) %></h3>
         <p class="trim"><%= prod.description %></p>
         <div class="card-stats">
           <h6>Available: <%= prod.availability %></h6>
-          <h6>£<%= prod.price %></h6>
+          <h5>£<%= prod.price %></h5>
         </div>
       </div>
     </div>

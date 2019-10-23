@@ -1,0 +1,23 @@
+.product-show-page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-details {
+  // flex-grow: 1;
+  width: 50vw;
+  height: 84vh;
+  padding: 16px;
+}
+
+.product-image {
+  background-size: cover;
+  background-position: center;
+  width: 50vw;
+  // height: 400px;
+}
+
+.product-stats {
+  display: flex;
+  justify-content: space-between;
+}
