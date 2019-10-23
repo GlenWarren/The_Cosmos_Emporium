@@ -3,6 +3,13 @@
   justify-content: space-between;
 }
 
+.trim {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 600px;
+}
+
 .filters{
   width: 16vw;
   height: 90vh;
@@ -15,5 +22,35 @@
   flex-grow: 1;
   a {
     text-decoration: none;
+    color: black;
+  }
+  .mycard {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: #1F282E;
+    padding: 4px;
+    img {
+      object-fit: cover;
+      width: 140px;
+      height: 140px;
+    }
+    .card-image {
+      width: 150px;
+    }
+    .card-details {
+      flex-grow: 1;
+      color: white;
+      padding: 16px;
+      a {
+        color: white;
+      }
+      .card-stats {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
   }
 }
