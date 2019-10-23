@@ -8,14 +8,24 @@
     <% end %>
   </div>
   <div class="results">
-    <h6>X number of items found:</h6>
+    <h6><%= @products.count %> results:</h6>
     <% @products.each do |prod| %>
-    <div class="card">
-      <%= link_to product_path(prod) do %>
-        <%= image_tag(prod.image) %>
-      <% end %>
-      <%= link_to prod.name, product_path(prod) %>
+    <div class="mycard">
+      <div class="card-image">
+        <%= link_to product_path(prod) do %>
+          <%= image_tag(prod.image) %>
+        <% end %>
+      </div>
+      <div class="card-details">
+        <h3><%= link_to prod.name, product_path(prod) %></h3>
+        <p class="trim"><%= prod.description %></p>
+        <div class="card-stats">
+          <h6>Available: <%= prod.availability %></h6>
+          <h6>£<%= prod.price %></h6>
+        </div>
+      </div>
     </div>
+    <br>
     <% end %>
   </div>
 </div>
