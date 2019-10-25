@@ -17,7 +17,18 @@
     <button class="mt-2">Add to Basket</button>
   </div>
     <div class="similar-products">
-      <h5>Similar products:</h5>
+      <!-- <h6>Similar products:</h6> -->
+      <div class="similar-cards">
+
+      <% @similar.sample(6).each do |prod| %>
+        <div class="similar-card">
+        <%= link_to category_product_path(prod.category, prod) do %>
+          <%= image_tag(prod.image) %>
+        <% end %>
+        <h6 class="pt-2 similar-trim"><%= link_to prod.name, category_product_path(prod.category, prod) %></h6>
+        </div>
+      <% end %>
+      </div>
 
     </div>
   </div>
