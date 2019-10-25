@@ -2,7 +2,7 @@
   <div class="navbar-top">
     <h6>Sign-in</h6>
     <h3 id="cosmos-emp" class=""><%= link_to "The Cosmos Emporium 🚀", root_path %></h3>
-    <h6>Basket</h6>
+    <h6><%= link_to "Basket", basket_path %></h6>
   </div>
   <div class="categories">
     <% Category.all.each do |cat| %>

@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @basket = Order.new
     @category = Category.find(params[:id])
     @sub_category = SubCategory.new
     @sub_categories = SubCategory.where(category: @category)
