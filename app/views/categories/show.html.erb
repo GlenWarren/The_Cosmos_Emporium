@@ -10,7 +10,7 @@
   </div>
   <div class="results">
     <h5><% if @active_subcat.present? %>
-        <%= @products.count %> results for <%= @active_subcat.name %>:
+        <%= @products.count %> result<% unless @products.count == 1 %>s<% end %> for <%= @active_subcat.name %>:
       <% else %>
         <%= @products.count %> results:
       <% end %>

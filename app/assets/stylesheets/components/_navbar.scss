@@ -26,3 +26,20 @@
   justify-content: space-around;
 }
 
+.navbar-blank {
+  text-align: center;
+  padding: 20px;
+  height: 12vh;
+  background: #1F282E;
+  color: white;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  a:hover {
+    color: #E2B93A;
+  }
+  .active {
+    color: #E2B93A;
+  }
+}
