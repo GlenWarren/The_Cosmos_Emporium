@@ -3,10 +3,14 @@
   justify-content: space-between;
 }
 
+.product-left {
+  height: 80vh;
+}
+
 .product-details {
   // flex-grow: 1;
   width: 50vw;
-  height: 84vh;
+  // height: 60vh;
   padding: 16px;
 }
 
@@ -23,5 +27,7 @@
 }
 
 .similar-products {
-  background: #E2B93A;
+  background: #1F282E;
+  color: white;
+  height: 150px;
 }
