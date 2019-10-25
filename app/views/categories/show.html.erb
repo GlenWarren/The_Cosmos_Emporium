@@ -1,14 +1,20 @@
 <%= render 'shared/navbar' %>
 <div class="show-page">
   <div class="filters border-right">
-    <h5>Category filters:</h5>
+    <h5>Apply filter:</h5>
     <% @sub_categories.each do |subcat| %>
-      <%= subcat.name %>
+      - <%= link_to subcat.name, category_path(@category, :filter => subcat.name) %>
+      (<%= subcat.products.count %>)
       <br>
     <% end %>
   </div>
   <div class="results">
-    <h5><%= @products.count %> results:</h5>
+    <h5><% if @active_subcat.present? %>
+        <%= @products.count %> results for <%= @active_subcat.name %>:
+      <% else %>
+        <%= @products.count %> results:
+      <% end %>
+      </h5>
     <% @products.each do |prod| %>
     <div class="mycard">
       <div class="card-image">

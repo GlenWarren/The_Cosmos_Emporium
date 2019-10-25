@@ -12,8 +12,13 @@
 
 .filters{
   width: 16vw;
+  min-height: 90vh;
   background: #E2B93A;
   padding: 10px 16px 16px 16px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
 
 .results {
