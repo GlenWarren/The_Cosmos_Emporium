@@ -18,7 +18,10 @@
   background-size: cover;
   background-position: center;
   width: 50vw;
-  // height: 400px;
+  height: 84vh;
+  position: fixed;
+  right: 0;
+  bottom: 0;
 }
 
 .product-stats {
@@ -29,5 +32,10 @@
 .similar-products {
   background: #1F282E;
   color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   height: 150px;
+  width: 50vw;
 }
+
