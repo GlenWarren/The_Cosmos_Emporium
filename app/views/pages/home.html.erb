@@ -25,12 +25,12 @@
       <%#= link_to subcat.name, category_path(subcat.category) %>
         <div class="popular">
           <%# unless subcat.products.count == 0 %>
-            <%= link_to category_path(subcat.category) do %>
+            <%= link_to category_path(subcat.category, :filter => subcat.name) do %>
               <% prod = subcat.category.products.sample %>
               <%= image_tag(prod.image) %>
             <% end %>
             <div class="popular-text">
-              <h5><%= link_to "#{subcat.name} (#{subcat.category.name})", category_path(subcat.category) %></h5>
+              <h5><%= link_to "#{subcat.name} (#{subcat.category.name})", category_path(subcat.category, :filter => subcat.name) %></h5>
               <h6>Listings: <%= subcat.products.count %></h6>
             </div>
           <%# end %>
