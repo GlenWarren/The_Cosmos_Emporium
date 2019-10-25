@@ -1,14 +1,18 @@
 .mybanner {
   text-align: center;
-  padding: 100px;
-  height: 48vh;
+  // padding: 100px;
+  height: 100%;
   color: white;
   // color: #E2B93A;
   background-size: cover;
   background-position: bottom;
-  h3 {
+  h2 {
     color: #E2B93A;
   }
+}
+
+.text {
+  padding: 88px 0;
 }
 
 .featured {
@@ -18,12 +22,13 @@
   display: flex;
   justify-content: space-around;
   padding: 12px;
+  padding-bottom: 62px;
   // height: 40vh;
 }
 
 .featureds {
   background: #1F282E;
-  border: solid 1px gray;
+  // border: solid 1px gray;
   border-radius: 4px;
   width: 40vw;
   padding: 8px 28px 20px 28px;
@@ -84,4 +89,10 @@
     padding: 12px;
     opacity: 0.9;
   }
+}
+
+.footer {
+  height: 40px;
+  background-color: #1F282E;
+  // background-color: black;
 }
