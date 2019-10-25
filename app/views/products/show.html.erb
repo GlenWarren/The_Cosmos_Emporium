@@ -1,5 +1,7 @@
 <%= render 'shared/navbar' %>
 <div class="product-show-page">
+  <div class="product-left">
+
   <div class="product-details">
     <h2><%= @product.name %></h2>
     <h6><%= @product.description %></h6>
@@ -13,10 +15,11 @@
       <h5>£<%= @product.price %></h5>
     </div>
     <button class="mt-2">Add to Basket</button>
-<!--     <div class="similar-products mt-5 border">
+  </div>
+    <div class="similar-products">
       <h5>Similar products:</h5>
 
-    </div> -->
+    </div>
   </div>
   <div class="product-image" style="background-image: url(<%= image_path @product.image %>)">
   </div>
