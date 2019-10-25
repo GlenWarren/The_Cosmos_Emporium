@@ -31,6 +31,7 @@
   a {
     text-decoration: none;
     color: white;
+    opacity: 0.9;
     // color: #E2B93A;
   }
 }
@@ -44,6 +45,7 @@
   h6 {
     color: white;
     text-decoration: none;
+    opacity: 0.9;
   }
 }
 
@@ -58,6 +60,7 @@
     object-fit: cover;
     width: 140px;
     height: 140px;
+    opacity: 0.9;
   }
 }
 
@@ -74,9 +77,11 @@
     object-fit: cover;
     width: 80px;
     height: 80px;
+    opacity: 0.9;
   }
   .popular-text {
     flex-grow: 1;
     padding: 12px;
+    opacity: 0.9;
   }
 }
