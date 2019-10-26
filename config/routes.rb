@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users#, controllers: { registrations: 'registrations' }
   root to: 'pages#home'
+  get 'basket', to: "pages#basket"
+
   resources :categories do
     resources :sub_categories, only: [:index, :show, :new, :create] do
       resources :filters, only: [:index, :show, :new, :create]
