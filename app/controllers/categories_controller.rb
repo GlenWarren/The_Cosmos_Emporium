@@ -4,8 +4,8 @@ class CategoriesController < ApplicationController
 
   def show
     @basket = Order.new
-    @category = Category.find(params[:id])
     @sub_category = SubCategory.new
+    @category = Category.find(params[:id])
     @sub_categories = SubCategory.where(category: @category)
     if params[:filter].present?
       @active_subcat = SubCategory.find_by(name: params[:filter])

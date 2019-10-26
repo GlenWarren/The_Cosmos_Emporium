@@ -4,7 +4,7 @@
     <div class="confirmation-details">
     <h4>Congratulations your order has been transmitted</h4>
       <% total = 0 %>
-      <% @basket.each do |prod, q| %>
+      <% @user_basket.each do |prod, q| %>
         <h5><%= prod.name %> (<%= prod.category.name %>) Quantity: <%= q %> Unit price: £<%= prod.price %> Price: £<%= prod.price * q %></h5>
         <% total += prod.price * q %>
       <% end %>

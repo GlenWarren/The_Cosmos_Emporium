@@ -15,6 +15,7 @@
       <h5>£<%= @product.price %></h5>
     </div>
     <button class="mt-2">Add to Basket</button>
+    <%= link_to "Add to Basket", orders_path, method: :post %>
   </div>
     <div class="similar-products">
       <!-- <h6>Similar products:</h6> -->
