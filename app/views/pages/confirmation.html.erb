@@ -1,0 +1,15 @@
+<%= render 'shared/blank_navbar' %>
+<div class="confirmation" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3)), url(<%= image_path 'retro_img_1.jpg' %>)">
+  <div class="main">
+    <div class="confirmation-details">
+    <h4>Congratulations your order has been transmitted</h4>
+      <% total = 0 %>
+      <% @basket.each do |prod, q| %>
+        <h5><%= prod.name %> (<%= prod.category.name %>) Quantity: <%= q %> Unit price: £<%= prod.price %> Price: £<%= prod.price * q %></h5>
+        <% total += prod.price * q %>
+      <% end %>
+      <h5>Total: £<%= total %></h5>
+      <h6>You will shortly receive an electronic text communication, confirming your purchase</h6>
+    </div>
+  </div>
+</div>
