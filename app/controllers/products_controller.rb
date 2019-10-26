@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
     @similar = Product.where(category: @category)
     @order = Order.new
     @order_item = OrderItem.new
+    user_signed_in? ? @user = current_user : @user = session[:current_user_id]
   end
 
   def new
