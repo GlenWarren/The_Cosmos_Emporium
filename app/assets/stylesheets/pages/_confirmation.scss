@@ -1,0 +1,24 @@
+.confirmation {
+  background-size: cover;
+  background-position: bottom;
+  height: 88vh;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  h4 {
+    color: green;
+  }
+}
+
+.confirmation-details {
+  background-color: rgba(31, 40, 46, 0.8);
+  border-radius: 4px;
+  padding: 8px 28px 10px 28px;
+  margin-bottom: 20px;
+  // border: solid 1px #E2B93A;
+  color: #E2B93A;
+  h5 {
+    color: white;
+  }
+  // text-align: center;
+}
