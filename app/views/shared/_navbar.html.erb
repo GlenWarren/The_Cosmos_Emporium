@@ -1,6 +1,12 @@
 <nav class="mynavbar">
   <div class="navbar-top">
-    <h6><%= link_to "Sign-in", new_user_session_path %></h6>
+    <h6>
+      <% if user_signed_in? %>
+        <%= link_to "Sign-out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign-in", new_user_session_path %>
+      <% end %>
+      </h6>
     <h3 id="cosmos-emp" class=""><%= link_to "The Cosmos Emporium 🚀", root_path %></h3>
     <h6><%= link_to "Basket", basket_path %></h6>
   </div>
