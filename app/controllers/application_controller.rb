@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def set_variables
     user_signed_in? ? @user = current_user : @user = session[:current_user_id]
+    # byebug
     basket = Order.find_by(user: @user, status: "Basket" || "Address")
     @order_items = OrderItem.where(order: basket)
     @user_basket = Hash.new(0)

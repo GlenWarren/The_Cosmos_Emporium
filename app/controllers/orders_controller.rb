@@ -14,7 +14,12 @@ class OrdersController < ApplicationController
     else
       @order = Order.create(user: @user, status: "Basket")
     end
-    OrderItem.create(order: @order, product: params[:id], quantity: 1)
+    prod = Product.find(params[:product_id])
+    OrderItem.create(order: @order, product: prod, quantity: 1)
+    # prod.active = false
+    # prod.save
+    redirect_to category_product_path(prod.category, prod)
+    # byebug
   end
 
   def edit

@@ -14,8 +14,10 @@
       <h5>Available: <%= @product.availability %></h5>
       <h5>£<%= @product.price %></h5>
     </div>
-    <button class="mt-2">Add to Basket</button>
-    <%= link_to "Add to Basket", orders_path, method: :post %>
+    <!-- <button class="mt-2">Add to Basket</button> -->
+    <%# if @product.active == true %>
+    <%= link_to "Add to Basket", orders_path(:product_id => @product), method: :post, id: "add-basket" %>
+    <%# end %>
   </div>
     <div class="similar-products">
       <!-- <h6>Similar products:</h6> -->
