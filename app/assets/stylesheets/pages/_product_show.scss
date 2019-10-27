@@ -14,6 +14,14 @@
   padding: 16px;
 }
 
+#add-basket {
+  background-color: #E2B93A;
+  padding: 12px 20px;
+  border-radius: 4px;
+  color: #1F282E;
+  text-decoration: none;
+}
+
 .product-image {
   background-size: cover;
   background-position: center;
@@ -27,6 +35,7 @@
 .product-stats {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 
 .similar-products {

@@ -9,10 +9,17 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(user: current_user, status: "Basket")
-    @order_item = OrderItem.new(order: @order, product: params[:id], quantity: 1)
-    @order.save
-    @order_item.save
+    if Order.find_by(user: @user, status: "Basket").present?
+      @order = Order.find_by(user: @user, status: "Basket")
+    else
+      @order = Order.create(user: @user, status: "Basket")
+    end
+    prod = Product.find(params[:product_id])
+    OrderItem.create(order: @order, product: prod, quantity: 1)
+    # prod.active = false
+    # prod.save
+    redirect_to category_product_path(prod.category, prod)
+    # byebug
   end
 
   def edit
@@ -24,10 +31,3 @@ class OrdersController < ApplicationController
   def destroy
   end
 end
-
-# - user clicks button (eventlistener)
-# - order = Order.where(user: current_user).find_by(status: "Basket") ? order : order = Order.create(user: current_user)
-# - check if user has an order with status "Basket"
-# - if not then create one
-# - Create a new order_item, quantity 1
-# -

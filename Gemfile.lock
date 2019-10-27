@@ -214,6 +214,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  byebug
   cloudinary (~> 1.9.1)
   devise
   dotenv-rails

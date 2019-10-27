@@ -8,7 +8,12 @@
       <% end %>
       </h6>
     <h3 id="cosmos-emp" class=""><%= link_to "The Cosmos Emporium 🚀", root_path %></h3>
-    <h6><%= link_to "Basket", basket_path %></h6>
+    <% quantity = 0 %>
+      <% @user_basket.each do |_prod, q| %>
+        <% quantity += q %>
+      <% end %>
+    <h6><%= link_to "Basket [ #{quantity} ]", basket_path %>
+    </h6>
   </div>
   <div class="categories">
     <% Category.all.each do |cat| %>
