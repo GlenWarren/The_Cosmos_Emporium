@@ -6,7 +6,8 @@ class ProductsController < ApplicationController
     # @basket = Order.new
     @category = Category.find(params[:category_id])
     @product = Product.find(params[:id])
-    @similar = Product.where(category: @category)
+    all_similar = Product.where(category: @category)
+    @similar = all_similar.reject { |prod| prod == @product }
     @order = Order.new
     @order_item = OrderItem.new
   end

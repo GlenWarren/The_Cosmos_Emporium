@@ -9,7 +9,7 @@
   <div class="featureds">
     <h5 class="p-2">Featured Products:</h5>
     <div class="cards">
-      <% Product.where(homepage: true).sample(6).each do |prod| %>
+      <% @featured.each do |prod| %>
       <div class="homepage-card">
         <%= link_to category_product_path(prod.category, prod) do %>
           <%= image_tag(prod.image) %>
@@ -22,10 +22,8 @@
   <div class="featureds">
     <h5 class="p-2">Popular Categories:</h5>
     <div class="pl-3">
-      <% SubCategory.where(homepage: true).sample(4).each do |subcat| %>
-      <%#= link_to subcat.name, category_path(subcat.category) %>
+      <% @popular.each do |subcat| %>
         <div class="popular">
-          <%# unless subcat.products.count == 0 %>
             <%= link_to category_path(subcat.category, :filter => subcat.name) do %>
               <% prod = subcat.category.products.sample %>
               <%= image_tag(prod.image) %>
@@ -34,7 +32,6 @@
               <h6><%= link_to "#{subcat.name} (#{subcat.category.name})", category_path(subcat.category, :filter => subcat.name) %></h6>
               <h6><%= subcat.products.count %> listing<% unless subcat.products.count == 1 %>s<% end %></h6>
             </div>
-          <%# end %>
         </div>
       <% end %>
     </div>

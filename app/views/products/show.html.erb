@@ -16,13 +16,16 @@
     </div>
     <!-- <button class="mt-2">Add to Basket</button> -->
     <%# if @product.active == true %>
+    <% if user_signed_in? %>
     <%= link_to "Add to Basket", orders_path(:product_id => @product), method: :post, id: "add-basket" %>
+    <% else %>
+    <%= link_to "Sign-in", new_user_session_path, id: "add-basket" %>
+    <% end %>
     <%# end %>
   </div>
     <div class="similar-products">
       <!-- <h6>Similar products:</h6> -->
       <div class="similar-cards">
-
       <% @similar.sample(6).each do |prod| %>
         <div class="similar-card">
         <%= link_to category_product_path(prod.category, prod) do %>

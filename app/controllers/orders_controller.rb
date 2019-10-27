@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
     OrderItem.create(order: @order, product: prod, quantity: 1)
     # prod.active = false
     # prod.save
+    # raise
     redirect_to category_product_path(prod.category, prod)
     # byebug
   end
