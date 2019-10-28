@@ -8,12 +8,14 @@ class ApplicationController < ActionController::Base
     # session[:current_user_id]
     # byebug
     @user = current_user
-    basket = Order.find_by(user: @user, status: "Basket" || "Address")
-    @order_items = OrderItem.where(order: basket)
+    @order = Order.find_by(user: @user, status: "Basket" || "Address")
+    @completed_order = Order.where(user: @user, status: "Complete").last
+    @order_items = OrderItem.where(order: @order)
     @user_basket = Hash.new(0)
     @order_items.each do |item|
-      @user_basket[item.product] += 1
+      @user_basket[item.product] += item.quantity
     end
+    # raise
   end
 end
 

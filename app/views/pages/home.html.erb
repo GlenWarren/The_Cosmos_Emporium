@@ -22,7 +22,7 @@
   <div class="featureds">
     <h5 class="p-2">Popular Categories:</h5>
     <div class="pl-3">
-      <% @popular.each do |subcat| %>
+      <% @popular.sample(4).each do |subcat| %>
         <div class="popular">
             <%= link_to category_path(subcat.category, :filter => subcat.name) do %>
               <% prod = subcat.category.products.sample %>

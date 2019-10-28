@@ -12,5 +12,10 @@ class PagesController < ApplicationController
   end
 
   def confirmation
+    @ordered_items = OrderItem.where(order: @completed_order)
+    @user_basket = Hash.new(0)
+    @ordered_items.each do |item|
+      @user_basket[item.product] += item.quantity
+    end
   end
 end
