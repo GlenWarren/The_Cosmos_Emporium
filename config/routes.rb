@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :sub_categories, only: [:edit, :update, :destroy]
   resources :products, only: [:edit, :update, :destroy]
   resources :filters, only: [:destroy]
-  resources :order_items, only: [:destroy]
+  resources :order_items, only: [:edit, :update, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

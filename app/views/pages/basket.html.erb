@@ -7,15 +7,29 @@
       <div id="basket-headers" class="basket-grid">
         <h5>Product</h5>
         <h5 class="text-center">Quantity</h5>
-        <h5>Unit Price</h5>
+        <h5 class="pl-4">Unit Price</h5>
         <h5>Price</h5>
       </div>
       <% @user_basket.each do |prod, q| %>
       <div class="basket-grid">
         <h5>
           <%= link_to prod.name, category_product_path(prod.category, prod) %> (<%= prod.category.name %>)</h5>
-          <h5 class="text-center"><%= q %></h5>
-          <h5>£<%= prod.price %></h5>
+          <% if prod.category.name == "Debris" %>
+            <h5 class="text-center quantity">
+              <%= link_to order_item_path(OrderItem.find_by(product: prod, order: @order), :quantity => "subtract", :product => prod), method: :patch do %>
+              <i class="fas fa-minus-square subtract"></i>
+              <% end %>
+              &nbsp&nbsp&nbsp
+              <span class="q"><%= q %></span>
+              &nbsp&nbsp&nbsp
+              <%= link_to order_item_path(OrderItem.find_by(product: prod, order: @order), :quantity => "add", :product => prod), method: :patch do %>
+              <i class="fas fa-plus-square add"></i>
+              <% end %>
+            </h5>
+          <% else %>
+            <h5 class="text-center"><%= q %></h5>
+          <% end %>
+          <h5 class="pl-4">£<%= prod.price %></h5>
           <h5>£<%= prod.price * q %></h5>
         <% total += prod.price * q %>
       </div>
@@ -23,7 +37,7 @@
       <div id="basket-total" class="basket-grid">
         <h5><%= @user.email %></h5>
         <h5></h5>
-        <h5>Total:</h5>
+        <h5 class="text-right">Total:</h5>
         <h5>£<%= total %></h5>
     </div>
     </div>
@@ -36,3 +50,4 @@
     </div>
   </div>
 </div>
+<script src="basket.js"></script>
