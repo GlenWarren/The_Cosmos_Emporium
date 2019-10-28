@@ -1,18 +1,35 @@
 <%= render 'shared/navbar' %>
 <div class="basket" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3)), url(<%= image_path 'retro_img_2.jpg' %>)">
   <div class="main">
-    <div class="basket-details">
+    <div class="basket-details pt-3">
       <h3>Basket</h3>
       <% total = 0 %>
+      <div id="basket-headers" class="basket-grid">
+        <h5>Product</h5>
+        <h5 class="text-center">Quantity</h5>
+        <h5>Unit Price</h5>
+        <h5>Price</h5>
+      </div>
       <% @user_basket.each do |prod, q| %>
-        <h5><%= prod.name %> (<%= prod.category.name %>) Quantity: <%= q %> Unit price: £<%= prod.price %> Price: £<%= prod.price * q %></h5>
+      <div class="basket-grid">
+        <h5>
+          <%= link_to prod.name, category_product_path(prod.category, prod) %> (<%= prod.category.name %>)</h5>
+          <h5 class="text-center"><%= q %></h5>
+          <h5>£<%= prod.price %></h5>
+          <h5>£<%= prod.price * q %></h5>
         <% total += prod.price * q %>
+      </div>
       <% end %>
-      <h5>Total: £<%= total %></h5>
+      <div id="basket-total" class="basket-grid">
+        <h5><%= @user.email %></h5>
+        <h5></h5>
+        <h5>Total:</h5>
+        <h5>£<%= total %></h5>
+    </div>
     </div>
     <div class="checkout-btn">
       <h5><% if user_signed_in? %>
-        <%= link_to "Checkout", checkout_path %>
+        <%= link_to "Checkout", edit_order_path(@order) if @user_basket.present? %>
       <% else %>
         <%= link_to "Sign-in", new_user_session_path %>
       <% end %></h5>

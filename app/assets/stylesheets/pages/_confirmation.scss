@@ -10,6 +10,10 @@
   }
 }
 
+.confirm-main {
+  width: 60vw;
+}
+
 .confirmation-details {
   background-color: rgba(31, 40, 46, 0.8);
   border-radius: 4px;
@@ -17,8 +21,29 @@
   margin-bottom: 20px;
   // border: solid 1px #E2B93A;
   color: #E2B93A;
-  h5 {
+  h6 {
     color: white;
   }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #E2B93A;
+  }
   // text-align: center;
+}
+
+.confirmation-addresses {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  margin-top: 20px;
+  pre {
+    color: white;
+    margin-top: 8px;
+  }
+  h5 {
+    width: 50%;
+  }
 }

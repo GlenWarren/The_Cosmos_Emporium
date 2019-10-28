@@ -1,17 +1,44 @@
 <%= render 'shared/blank_navbar' %>
 <div class="checkout" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3)), url(<%= image_path 'retro_img_2.jpg' %>)">
-  <div class="main">
-    <div class="basket-details">
+  <div class="checkout-main">
+    <div class="checkout-details">
       <h3>Your order:</h3>
       <% total = 0 %>
+      <div id="checkout-headers" class="checkout-grid">
+        <h6>Product</h6>
+        <h6 class="text-center">Quantity</h6>
+        <h6>Price</h6>
+      </div>
       <% @user_basket.each do |prod, q| %>
-        <h5><%= prod.name %> (<%= prod.category.name %>) Quantity: <%= q %> Unit price: £<%= prod.price %> Price: £<%= prod.price * q %></h5>
+      <div class="checkout-grid">
+        <h6>
+          <%= link_to prod.name, category_product_path(prod.category, prod) %></h6>
+          <h6 class="text-center"><%= q %></h6>
+          <h6>£<%= prod.price * q %></h6>
         <% total += prod.price * q %>
+      </div>
       <% end %>
-      <h5>Total: £<%= total %></h5>
+      <div id="checkout-total" class="checkout-grid">
+        <p><%= @user.email %></p>
+        <h5></h5>
+        <h5>Total: £<%= total %></h5>
     </div>
-    <div class="checkout-btn">
-      <h5><%= link_to "Place Order", confirmation_path %></h5>
     </div>
+<!--     <div class="order-btn">
+      <h5><%#= link_to "Place Order", confirmation_path %></h5>
+    </div> -->
   </div>
+    <div class="addresses">
+        <%= simple_form_for @order do |f| %>
+      <h5><div class="billing">
+        <%= f.input :billing_address, :input_html => {:rows => 5}, label: "Billing name and address" %>
+      </div>
+      <div class="shipping">
+        <%= f.input :shipping_address, :input_html => {:rows => 5}, label: "Shipping name and address" %>
+      </div></h5>
+      <div id="order-btn">
+        <%= f.button :submit, "Place Order" %>
+      <% end %>
+    </div>
+    </div>
 </div>

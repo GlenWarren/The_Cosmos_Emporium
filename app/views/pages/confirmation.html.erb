@@ -1,15 +1,35 @@
 <%= render 'shared/blank_navbar' %>
 <div class="confirmation" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3)), url(<%= image_path 'retro_img_1.jpg' %>)">
-  <div class="main">
-    <div class="confirmation-details">
-    <h4>Congratulations your order has been transmitted</h4>
+  <div class="confirm-main">
+    <div class="confirmation-details pt-3">
+    <h4 class="pb-2">Congratulations your order has been transmitted</h4>
       <% total = 0 %>
+      <div id="checkout-headers" class="checkout-grid">
+        <h6>Product</h6>
+        <h6 class="text-center">Quantity</h6>
+        <h6>Price</h6>
+      </div>
       <% @user_basket.each do |prod, q| %>
-        <h5><%= prod.name %> (<%= prod.category.name %>) Quantity: <%= q %> Unit price: £<%= prod.price %> Price: £<%= prod.price * q %></h5>
+      <div class="checkout-grid">
+        <h6>
+          <%= link_to prod.name, category_product_path(prod.category, prod) %></h6>
+          <h6 class="text-center"><%= q %></h6>
+          <h6>£<%= prod.price * q %></h6>
         <% total += prod.price * q %>
+      </div>
       <% end %>
-      <h5>Total: £<%= total %></h5>
-      <h6>You will shortly receive an electronic text communication, confirming your purchase</h6>
+      <div id="checkout-total" class="checkout-grid">
+        <h5><%= @user.email %></h5>
+        <h5></h5>
+        <h5>Total: £<%= total %></h5>
+    </div>
+    <div class="confirmation-addresses">
+      <h5>Billing details:
+      <pre><%= @completed_order.billing_address %></pre></h5>
+      <h5>Shipping details:
+      <pre><%= @completed_order.shipping_address %></pre></h5>
+    </div>
+      <h5>You will shortly receive an electronic text communication, confirming your purchase</h6>
     </div>
   </div>
 </div>
