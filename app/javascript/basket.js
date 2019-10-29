@@ -43,5 +43,9 @@ const documentQueries = (row) => {
   addListeners(add, subtract, quantity, unit, price);
 };
 
-const rows = document.querySelectorAll(".basket-rows");
-rows.forEach(documentQueries);
+const updateBasketQuantities = () => {
+  const rows = document.querySelectorAll(".basket-rows");
+  rows.forEach(documentQueries);
+}
+
+export { updateBasketQuantities }
