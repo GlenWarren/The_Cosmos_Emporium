@@ -28,5 +28,9 @@ class OrderItemsController < ApplicationController
   end
 
   def destroy
+    order = @order
+    order_item = OrderItem.find_by(product: params[:product], order: order)
+    order_item.destroy
+    redirect_to basket_path
   end
 end

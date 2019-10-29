@@ -12,7 +12,7 @@
       <% @user_basket.each do |_prod, q| %>
         <% quantity += q %>
       <% end %>
-    <h6><%= link_to "Basket [ #{quantity} ]", basket_path %>
+    <h6 id="basket-quantity"><%= link_to "Basket [ #{quantity} ]", basket_path %>
     </h6>
   </div>
   <div class="categories">
