@@ -13,8 +13,8 @@ const updateFigures = (price, unit, quantity) => {
     sum2 += parseInt(q.innerText);
   });
   const basketQuantity = document.getElementById("basket-quantity");
-  basketQuantity.innerText = `Basket [ ${sum2} ]`
-}
+  basketQuantity.innerText = `Basket [ ${sum2} ]`;
+};
 
 const addListeners = (add, subtract, quantity, unit, price) => {
   if (add !== null) {
@@ -23,16 +23,16 @@ const addListeners = (add, subtract, quantity, unit, price) => {
       updateFigures(price, unit, quantity);
       // debugger
     });
-  }
+  };
   if (subtract !== null) {
     subtract.addEventListener('click', (event) => {
       if (quantity.innerText > 1) {
         quantity.innerText -= 1;
-      }
+      };
       updateFigures(price, unit, quantity);
     });
-  }
-}
+  };
+};
 
 const documentQueries = (row) => {
   const subtract = row.querySelector(".subtract");
@@ -41,7 +41,7 @@ const documentQueries = (row) => {
   const unit = row.querySelector(".unit");
   const price = row.querySelector(".price");
   addListeners(add, subtract, quantity, unit, price);
-}
+};
 
 const rows = document.querySelectorAll(".basket-rows");
 rows.forEach(documentQueries);
