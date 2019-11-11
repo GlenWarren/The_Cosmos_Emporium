@@ -69,21 +69,21 @@ Category.create(
 
 puts 'Initiating sub_categories seed...'
 
-%w(Life-supporting Not-life-supporting H2O-present Dwarf Terrestrial Gas Ice Giant).each do |a|
+%w(Life-supporting Life-absent H2O-present Dwarf Terrestrial Gas-planet Ice-planet Giant Rogue-planet).each do |a|
   SubCategory.create(
     category: Category.find_by(name: "Planets"),
     name: a
   )
 end
 
-%w(Sun Non-sun T-Tauri Main-sequence Red-giant White-dwarf Red-dwarf Neutron Supergiant).each do |a|
+%w(Planetary Isolated T-Tauri Main-sequence Red-giant White-dwarf Red-dwarf Neutron Supergiant).each do |a|
   SubCategory.create(
     category: Category.find_by(name: "Stars"),
     name: a
   )
 end
 
-%w(Cheddar Camembert Red-leicester Wensleydale Mozzarella Gorgonzola Feta Melted).each do |a|
+%w(Cheddar Camembert Red-leicester Melted Wensleydale Mozzarella Gorgonzola Feta).each do |a|
   SubCategory.create(
     category: Category.find_by(name: "Moons"),
     name: a
@@ -118,11 +118,11 @@ descriptions = [
   "Bocconcini lancashire cheesy grin. Cheddar pecorino cheese slices pecorino fromage frais stilton rubber cheese cheeseburger. Swiss the big cheese cheeseburger red leicester lancashire mascarpone croque monsieur cheese on toast. Boursin cheddar cow port-salut manchego."
   ]
 
-planet_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1571933520/aj7nwqvitr6inflw3pks.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933516/j507jwm1qqjdzjx6wcfz.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933508/hnxjbnqcowc2k9k6xs2l.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933485/z7jli6cc7xmh2t67wetx.png https://res.cloudinary.com/glenwarren/image/upload/v1571933512/wtbxod1prjg7k793teil.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933503/jz68kio7coeo5v5d0fph.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933495/qgrg5rx0gfihhyd9nrux.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933520/aj7nwqvitr6inflw3pks.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933516/j507jwm1qqjdzjx6wcfz.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933508/hnxjbnqcowc2k9k6xs2l.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933485/z7jli6cc7xmh2t67wetx.png)
+planet_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1573472279/mttjmljb1tafibitugaq.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472270/hiauxwspzgvvnfvlfu2q.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472262/zp2iuq6zhytlcfzi6weu.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472256/h5le0ad9qa4n4kfefhoi.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933512/wtbxod1prjg7k793teil.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933503/jz68kio7coeo5v5d0fph.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933495/qgrg5rx0gfihhyd9nrux.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933520/aj7nwqvitr6inflw3pks.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933516/j507jwm1qqjdzjx6wcfz.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933508/hnxjbnqcowc2k9k6xs2l.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933485/z7jli6cc7xmh2t67wetx.png)
 
 date = %w(23/11/2024 12/01/2021 06/08/2023 30/04/2045)
 
-%w(Clive GDW506 Polly Juan Planet8576001917 Strawberry-fields Enrique Sanchez Bobo Plastic Goldie).each do |n|
+%w(Clevitia GDW506 Polla Janu Planet8576001917 Strawberra Enriqeua Senchaz Flabflablaf Plistac Geldio).each do |n|
   Product.create(
     category: Category.find_by(name: "Planets"),
     name: n,
@@ -133,9 +133,9 @@ date = %w(23/11/2024 12/01/2021 06/08/2023 30/04/2045)
   )
 end
 
-star_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1571933717/nwztm2msoqlnuzstxp1h.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933722/bay9rfhg5gxco0splu38.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933729/sktbajgxd6avewzrp6j6.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933734/iffekyholvlc4idlzogo.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933738/vfybsmnf7rip6d14onjm.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933706/mgufp88xgewkbf67mqif.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933712/flxohlamyu9s6aewlero.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933722/bay9rfhg5gxco0splu38.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933729/sktbajgxd6avewzrp6j6.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933734/iffekyholvlc4idlzogo.jpg)
+star_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1571933717/nwztm2msoqlnuzstxp1h.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472310/wkvwrsfywyi8mzemuzsq.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472305/xr88rvbbrgqvmsnt30ut.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472297/ir0muntaxn0426dcxhi3.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933738/vfybsmnf7rip6d14onjm.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933706/mgufp88xgewkbf67mqif.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933712/flxohlamyu9s6aewlero.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933722/bay9rfhg5gxco0splu38.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933729/sktbajgxd6avewzrp6j6.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933734/iffekyholvlc4idlzogo.jpg)
 
-%w(Sriracha Peri-peri George X1 X2 X3 Fluffy Spike Hot-one Frank).each do |n|
+%w(Srirachi Peri-peri Aldebaran Altair Antares Canopus Floshaxia Sirius Betelgeuse Arcturus).each do |n|
   Product.create(
     category: Category.find_by(name: "Stars"),
     name: n,
@@ -146,9 +146,9 @@ star_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1571933717/
   )
 end
 
-moon_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1571933299/l8tzzrd9zuxatoc5xlmt.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933309/u4svypkcwvofrvp6vnl6.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933304/k1usdere2ap7urun5ba2.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933299/l8tzzrd9zuxatoc5xlmt.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933309/u4svypkcwvofrvp6vnl6.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933304/k1usdere2ap7urun5ba2.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933299/l8tzzrd9zuxatoc5xlmt.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933309/u4svypkcwvofrvp6vnl6.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933304/k1usdere2ap7urun5ba2.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933299/l8tzzrd9zuxatoc5xlmt.jpg)
+moon_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1573472241/ja1uxxzetunidhzcib6s.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472236/ay6ezdxog2abl0svlocz.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472230/lynszu6ztsd3dxdjqee8.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472225/iqvesm5kbotk8q2f7gjr.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472218/n7ly2ecid2nsfd40m9ac.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472206/d5wjvn1b6e5zcwojtcvx.jpg https://res.cloudinary.com/glenwarren/image/upload/v1573472200/iwzeetblws6tnzzg9yl8.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933309/u4svypkcwvofrvp6vnl6.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933304/k1usdere2ap7urun5ba2.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571933299/l8tzzrd9zuxatoc5xlmt.jpg)
 
-%w(Mario Wallace Quentin Roundy Spicy Svën Byörk Quadrant-7-Moon Area52 Jupiter-Moon).each do |n|
+%w(Mario Wallace Quentin Callisto Europa Adrastea Ganymede Valetudo Area52 Amalthea).each do |n|
   Product.create(
     category: Category.find_by(name: "Moons"),
     name: n,
@@ -159,9 +159,9 @@ moon_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1571933299/
   )
 end
 
-black_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1571932738/sefujtwosu6oxx9gbyat.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932860/e17zn5jletxchsvckrpe.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932898/gtj8yza3lbiua5uhj5hf.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932905/ekbbf3mzuv7rqd9b4pad.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932910/z0cy0zo3xumzg4ei40k1.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932915/h5oivjpyvfhmmytwvnyb.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932738/sefujtwosu6oxx9gbyat.jpg)
+black_images = %w(https://res.cloudinary.com/glenwarren/image/upload/v1573472146/uioe0zsckg8amcwqbwxi.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932860/e17zn5jletxchsvckrpe.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932898/gtj8yza3lbiua5uhj5hf.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932905/ekbbf3mzuv7rqd9b4pad.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932910/z0cy0zo3xumzg4ei40k1.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932915/h5oivjpyvfhmmytwvnyb.jpg https://res.cloudinary.com/glenwarren/image/upload/v1571932738/sefujtwosu6oxx9gbyat.jpg)
 
-%w(APM-08279+5255 Holey S5-0014+81 4C-+37.11 1ES-2344+514 HE0450-2958 PKS-0548-322).each do |n|
+%w(APM-08279+5255 FJ0890-2234 S5-0014+81 4C-+37.11 1ES-2344+514 HE0450-2958 PKS-0548-322).each do |n|
   Product.create(
     category: Category.find_by(name: "Black Holes"),
     name: n,
@@ -190,11 +190,11 @@ puts 'Initiating filters seed...'
 Product.where(category: Category.find_by(name: "Planets")).each do |prod|
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Life-supporting Not-life-supporting H2O-present).sample)
+    sub_category: SubCategory.find_by(name: %w(Life-supporting Life-absent H2O-present).sample)
   )
   Filter.create(
     product: prod,
-    sub_category: SubCategory.find_by(name: %w(Dwarf Terrestrial Gas Ice Giant).sample)
+    sub_category: SubCategory.find_by(name: %w(Dwarf Terrestrial Gas-planet Ice-planet Giant Rogue-planet).sample)
   )
 end
 
